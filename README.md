@@ -5,7 +5,12 @@ npm install
 bower install
 ```
 
-then
+deving
+```
+npm run dev
+```
+
+or
 
 ```
 jekyll serve
