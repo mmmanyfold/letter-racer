@@ -18,12 +18,64 @@
     <meta name="description" content='"Remember the Memories" Out Now'>
 
     <title>Tony Seltzer</title>
-    <style>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <style>
+      html,body {
+        height: 100%;
+        margin: 0;
+      }
+      .wrapper {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        height: 100%;
+      }
+      .wrapper img {
+        height: 100%;
+        width: auto;
+      }
+      .fa-angle-right, .fa-angle-left {
+        top: 45%;
+        position: fixed;
+        font-size: 5em;
+        opacity: 0.35;
+      }
+      .fa-angle-right {
+        right: 20px;
+      }
+      .fa-angle-left {
+        left: 20px;
+      }
+      .sound-player {
+        position: relative;
+      }
+      .sound-player iframe {
+        position: absolute;
+        top: 20%;
+        left: 180px;
+      }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
 </head>
 
 <body>
-
+  <div class="wrapper">
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <i class="fa fa-angle-left" aria-hidden="true"></i>
+    <img src="img/splash-tony/1-neon-color.jpg"/>
+    <div class="sound-player">
+      <iframe width="500" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/207818216&amp;color=40c7db&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+    </div>
+    <img src="img/splash-tony/2-neon-color.jpg"/>
+    <img src="img/splash-tony/3.jpg"/>
+    <img src="img/splash-tony/4.jpg"/>
+    <img src="img/splash-tony/5.jpg"/>
+    <img src="img/splash-tony/6.jpg"/>
+    <img src="img/splash-tony/7.jpg"/>
+  </div>
+  <div id="container"></div>
+  <script defer src="js/splash-tony.js"></script>
 </body>
 </html>
