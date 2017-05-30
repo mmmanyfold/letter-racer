@@ -21,7 +21,7 @@ function init() {
     mesh = new THREE.Mesh(geometry, material);
     mesh.rotateZ(115);
     scene.add(mesh);
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     wrapper.appendChild(renderer.domElement);
