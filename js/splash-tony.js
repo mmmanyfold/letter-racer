@@ -12,7 +12,7 @@ animate();
 // 56mm * 33mm
 
 function init() {
-    camera = new THREE.PerspectiveCamera(300, window.innerWidth / window.innerHeight, 1, 1000);
+    camera = new THREE.PerspectiveCamera(250, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.z = 500;
     scene = new THREE.Scene();
     var texture = new THREE.TextureLoader().load('./img/splash-tony/cassette.jpg');
@@ -23,15 +23,15 @@ function init() {
     scene.add(mesh);
     renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize((window.innerHeight * 0.97), window.innerHeight);
     wrapper.appendChild(renderer.domElement);
     window.addEventListener('resize', onWindowResize, false);
 }
 
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = (window.innerHeight * 0.97) / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize((window.innerHeight * 0.97), window.innerHeight);
 }
 
 function animate() {
