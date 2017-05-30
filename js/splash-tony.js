@@ -2,6 +2,8 @@ var camera = null
 var scene = null;
 var renderer = null;
 var mesh = null;
+const container = document.querySelector('#container');
+const wrapper = document.querySelector('.wrapper');
 
 init();
 animate();
@@ -22,7 +24,7 @@ function init() {
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    wrapper.appendChild(renderer.domElement);
     window.addEventListener('resize', onWindowResize, false);
 }
 
