@@ -16,7 +16,7 @@ function init() {
     camera.position.z = 500;
     scene = new THREE.Scene();
     var texture = new THREE.TextureLoader().load('./img/splash-tony/cassette.jpg');
-    var geometry = new THREE.BoxBufferGeometry(560, 340, 70);
+    var geometry = new THREE.BoxBufferGeometry(600, 450, 113);
     var material = new THREE.MeshBasicMaterial({ map: texture });
     mesh = new THREE.Mesh(geometry, material);
     mesh.rotateZ(115);
