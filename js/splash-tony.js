@@ -4,6 +4,14 @@ var renderer = null;
 var mesh = null;
 
 const wrapper = document.querySelector('#cassette-wrap');
+const soundPlayer = document.querySelector('.sound-player')
+    .querySelector('iframe');
+
+// sound-player iframe width and height
+const w = window.innerHeight * 0.65;
+const h = window.innerHeight * 0.58;
+soundPlayer.width = w;
+soundPlayer.height = h;
 
 init();
 animate();
@@ -33,6 +41,10 @@ function init() {
 }
 
 function onWindowResize() {
+    const w = window.innerHeight * 0.65;
+    const h = window.innerHeight * 0.58;
+    soundPlayer.width = w;
+    soundPlayer.height = h;
     camera.updateProjectionMatrix();
     renderer.setSize((window.innerHeight * 0.97), window.innerHeight);
 }
