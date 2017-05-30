@@ -2,8 +2,8 @@ var camera = null
 var scene = null;
 var renderer = null;
 var mesh = null;
-const container = document.querySelector('#container');
-const wrapper = document.querySelector('.wrapper');
+
+const wrapper = document.querySelector('#cassette-wrap');
 
 init();
 animate();
