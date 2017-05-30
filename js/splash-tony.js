@@ -8,17 +8,21 @@ const wrapper = document.querySelector('#cassette-wrap');
 init();
 animate();
 
-// standard cassette dimensions
-// 56mm * 33mm
-
 function init() {
-    camera = new THREE.PerspectiveCamera(250, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.z = 500;
+    var material1 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') } );
+    var material2 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') } );
+    var material3 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side1.jpg') } );
+    var material4 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side1.jpg') } );
+    var material5 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-front.jpg') } );
+    var material6 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-back.jpg') } );
+
+    var materials = [material1, material2, material3, material4, material5, material6];
+
+    camera = new THREE.PerspectiveCamera(290, window.innerWidth / window.innerHeight, 1, 10000);
+    camera.position.z = 1000;
     scene = new THREE.Scene();
-    var texture = new THREE.TextureLoader().load('./img/splash-tony/cassette.jpg');
     var geometry = new THREE.BoxBufferGeometry(600, 450, 113);
-    var material = new THREE.MeshBasicMaterial({ map: texture });
-    mesh = new THREE.Mesh(geometry, material);
+    mesh = new THREE.Mesh(geometry, materials);
     mesh.rotateZ(115);
     scene.add(mesh);
     renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -36,7 +40,6 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    mesh.rotation.x += 0.005;
     mesh.rotation.y += 0.0085;
     renderer.render(scene, camera);
 }
