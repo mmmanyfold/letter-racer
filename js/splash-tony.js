@@ -18,7 +18,7 @@ function init() {
 
     var materials = [material1, material2, material3, material4, material5, material6];
 
-    camera = new THREE.PerspectiveCamera(290, window.innerWidth / window.innerHeight, 1, 10000);
+    camera = new THREE.PerspectiveCamera(290, 1.33, 1, 10000);
     camera.position.z = 1000;
     scene = new THREE.Scene();
     var geometry = new THREE.BoxBufferGeometry(600, 450, 113);
@@ -33,7 +33,6 @@ function init() {
 }
 
 function onWindowResize() {
-    camera.aspect = (window.innerHeight * 0.97) / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize((window.innerHeight * 0.97), window.innerHeight);
 }
