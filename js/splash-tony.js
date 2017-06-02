@@ -60,3 +60,11 @@ function animate() {
     mesh.rotation.y += 0.0085;
     renderer.render(scene, camera);
 }
+
+$(window).on("scrollstart", function() {
+  $("i").fadeOut();
+});
+
+$(window).on("scrollstop", function() {
+  $("i").fadeIn();
+});
