@@ -36,11 +36,28 @@
         height: 100%;
         width: auto;
       }
+
+      /*glow for webkit*/
+      @-webkit-keyframes neon1 {
+        from {
+          text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 16px #fff, 0 0 20px #FF1177, 0 0 36px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 76px #FF1177;
+        }
+        to {
+          text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #FF1177, 0 0 18px #FF1177, 0 0 20px #FF1177, 0 0 25px #FF1177, 0 0 38px #FF1177;
+        }
+      }
+
       .fa-angle-right, .fa-angle-left {
         top: 45%;
         position: fixed;
-        font-size: 5em;
-        opacity: 0.35;
+        font-size: 4em;
+        opacity: 0.75;
+        z-index: 10;
+        color: #fff;
+        cursor: pointer;
+        -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+        animation: neon1 1.5s ease-in-out infinite alternate;
       }
       .fa-angle-right {
         right: 20px;
@@ -61,6 +78,8 @@
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery.scrollstop.min.js"></script>
 </head>
 
 <body>

@@ -17,12 +17,12 @@ init();
 animate();
 
 function init() {
-    var material1 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') } );
-    var material2 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') } );
-    var material3 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') } );
-    var material4 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side1.jpg') } );
-    var material5 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-front.jpg') } );
-    var material6 = new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load('./img/splash-tony/cassette-back.jpg') } );
+    var material1 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') });
+    var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') });
+    var material3 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') });
+    var material4 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side1.jpg') });
+    var material5 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-front.jpg') });
+    var material6 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-back.jpg') });
     var materials = [material1, material2, material3, material4, material5, material6];
 
     camera = new THREE.PerspectiveCamera(290, 1.33, 1, 10000);
@@ -60,3 +60,56 @@ function animate() {
     mesh.rotation.y += 0.0085;
     renderer.render(scene, camera);
 }
+
+$(window).on("scrollstart", function () {
+    $("i").fadeOut(100);
+    hideLeftArrow();
+    hideRightArrow();
+});
+
+$(window).on("scrollstop", function () {
+    $("i").fadeIn(100);
+    hideLeftArrow();
+    hideRightArrow();
+});
+
+
+function calculateWidth() {
+    const ratios = [0.64, 1.52, 1.03, 0.58, 0.73, 1.24, 0.37];
+    const windowHeight = window.innerHeight;
+    return ratios.map(r => r * windowHeight).reduce((a,b) => a + b);
+}
+
+function hideLeftArrow() {
+    const pos = $(window).scrollLeft();
+    if (pos < 100) {
+        $("i:nth-child(2)").hide();
+    }
+}
+
+function hideRightArrow() {
+    const pos = $(window).scrollLeft();
+    const w = calculateWidth();
+    if (pos > (w - (window.screen.width + 100))) {
+        $("i:nth-child(1)").hide();
+    }
+}
+
+hideLeftArrow();
+hideRightArrow();
+
+function jump(pos) {
+  $('html,body').animate({
+      scrollLeft: pos},
+      400);
+};
+
+$('.fa-angle-right').click(() => {
+  const pos = $(window).scrollLeft();
+  jump(pos + 500);
+});
+
+$('.fa-angle-left').click(() => {
+  const pos = $(window).scrollLeft();
+  jump(pos - 500);
+});
