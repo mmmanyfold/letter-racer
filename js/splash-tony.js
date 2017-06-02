@@ -77,7 +77,7 @@ $(window).on("scrollstop", function () {
 function calculateWidth() {
     const ratios = [0.64, 1.52, 1.03, 0.58, 0.73, 1.24, 0.37];
     const windowHeight = window.innerHeight;
-    return ratios.map(r => r * windowHeight).reduce((a,b) => a + b);
+    return ratios.map(r => r * windowHeight).reduce((a, b) => a + b);
 }
 
 function hideLeftArrow() {
@@ -99,17 +99,67 @@ hideLeftArrow();
 hideRightArrow();
 
 function jump(pos) {
-  $('html,body').animate({
-      scrollLeft: pos},
-      400);
+    $('html,body').animate({
+            scrollLeft: pos
+        },
+        400);
 };
 
 $('.fa-angle-right').click(() => {
-  const pos = $(window).scrollLeft();
-  jump(pos + 500);
+    const pos = $(window).scrollLeft();
+    jump(pos + 500);
 });
 
 $('.fa-angle-left').click(() => {
-  const pos = $(window).scrollLeft();
-  jump(pos - 500);
+    const pos = $(window).scrollLeft();
+    jump(pos - 500);
 });
+
+let flickr_1 = false;
+let flickr_2 = false;
+
+const on1 = () => {
+    flickr_1 = false;
+    $('#neon-1').attr('src', 'img/splash-tony/1-neon-color.jpg')
+}
+
+const off1 = () => {
+    flickr_1 = true;
+    $('#neon-1').attr('src', 'img/splash-tony/1-neon-bw.jpg')
+}
+
+const on2 = () => {
+    flickr_2 = false;
+    $('#neon-2').attr('src', 'img/splash-tony/2-neon-color.jpg')
+}
+
+const off2 = () => {
+    flickr_2 = true;
+    $('#neon-2').attr('src', 'img/splash-tony/2-neon-bw.jpg')
+}
+
+var lastTime_1 = 0;
+var lastTime_2 = 0;
+
+function flickerPauses() {
+    if (lastTime_1 < 5) {
+        lastTime_1++;
+        return Math.random() * 100;
+    } else {
+        lastTime_1 = 0;
+        return Math.random() * 2300;
+    }
+}
+
+function onFlickr() {
+    console.log(lastTime_1);
+    if (flickr_1) {
+        on1()
+    } else {
+        off1()
+    }
+    setTimeout(onFlickr, flickerPauses());
+}
+
+onFlickr();
+// onFlickr(flickr_2, lastTime_2, on2, off2);
