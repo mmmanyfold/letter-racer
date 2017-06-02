@@ -61,10 +61,24 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-$(window).on("scrollstart", function() {
-  $("i").fadeOut();
+
+
+$(window).on("scrollstart", function () {
+    $("i").fadeOut(100);
+    hideLeftArrow();
 });
 
-$(window).on("scrollstop", function() {
-  $("i").fadeIn();
+$(window).on("scrollstop", function () {
+    $("i").fadeIn(100);
+    hideLeftArrow();
 });
+
+
+function hideLeftArrow() {
+    const offset = $(window).scrollLeft();
+    if (offset < 100) {
+        $("i:nth-child(2)").hide();
+    }
+}
+
+hideLeftArrow();
