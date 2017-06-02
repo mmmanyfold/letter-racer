@@ -7,7 +7,7 @@ const wrapper = document.querySelector('#cassette-wrap');
 const soundPlayer = document.querySelector('.sound-player')
     .querySelector('iframe');
 
-// sound-player iframe width and height
+// soundcloud iframe responsive width and height
 const w = window.innerHeight * 0.65;
 const h = window.innerHeight * 0.58;
 soundPlayer.width = w;
@@ -60,6 +60,8 @@ function animate() {
     mesh.rotation.y += 0.0085;
     renderer.render(scene, camera);
 }
+
+// scroll arrows
 
 $(window).on("scrollstart", function () {
     $("i").fadeOut(100);
@@ -115,6 +117,8 @@ $('.fa-angle-left').click(() => {
     jump(pos - 500);
 });
 
+// neon flickers
+
 let flickr_1 = false;
 let flickr_2 = false;
 
@@ -141,7 +145,7 @@ const off2 = () => {
 var lastTime_1 = 0;
 var lastTime_2 = 0;
 
-function flickerPauses() {
+function flickerPauses1() {
     if (lastTime_1 < 5) {
         lastTime_1++;
         return Math.random() * 100;
@@ -151,15 +155,35 @@ function flickerPauses() {
     }
 }
 
-function onFlickr() {
+function flickerPauses2() {
+    if (lastTime_2 < 5) {
+        lastTime_2++;
+        return Math.random() * 100;
+    } else {
+        lastTime_2 = 0;
+        return Math.random() * 2300;
+    }
+}
+
+function onFlickr1() {
     console.log(lastTime_1);
     if (flickr_1) {
         on1()
     } else {
         off1()
     }
-    setTimeout(onFlickr, flickerPauses());
+    setTimeout(onFlickr1, flickerPauses1());
 }
 
-onFlickr();
-// onFlickr(flickr_2, lastTime_2, on2, off2);
+function onFlickr2() {
+    console.log(lastTime_2);
+    if (flickr_2) {
+        on2()
+    } else {
+        off2()
+    }
+    setTimeout(onFlickr2, flickerPauses2());
+}
+
+onFlickr1();
+onFlickr2();
