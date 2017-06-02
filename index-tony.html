@@ -25,6 +25,7 @@
       html,body {
         height: 100%;
         margin: 0;
+        font-family: 'helvetica', sans-serif;
       }
       .wrapper {
         display: -webkit-flex;
@@ -66,16 +67,34 @@
       .fa-angle-left {
         left: 20px;
       }
-      .sound-player, #cassette-wrap {
+      .sound-player, #cassette-wrap, .tracklist-wrap {
         position: relative;
       }
-      #cassette-wrap canvas {
-          position: absolute;
+      .sound-player iframe, #cassette-wrap canvas, .tracklist-wrap .tracklist {
+        position: absolute;
       }
       .sound-player iframe {
-        position: absolute;
         top: 20%;
         left: 180px;
+      }
+      .tracklist-wrap .tracklist {
+        height: 50%;
+        width: auto;
+        top: 10%;
+        left: 9em;
+        display: inline-block;
+      }
+      .tracklist-wrap .tracklist img {
+        margin-bottom: 0.5em;
+      }
+      h1 {
+        margin: 0;
+        font
+      }
+      mark {
+        background-color: rgba(0,0,0,0.5);
+        padding: 0 0.2em;
+        color: white;
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
@@ -94,6 +113,13 @@
     <img id="neon-2" src="img/splash-tony/2-neon-color.jpg"/>
     <div id="cassette-wrap"></div>
     <img src="img/splash-tony/3.jpg"/>
+    <div class="tracklist-wrap">
+      <div class="tracklist">
+        <img src="img/splash-tony/tracklist.jpg"/>
+        <h1><mark>DIGITAL</mark></h1>
+        <h1><mark>DOWNLOAD</mark></h1>
+      </div>
+    </div>
     <img src="img/splash-tony/4.jpg"/>
     <img src="img/splash-tony/5.jpg"/>
     <img src="img/splash-tony/6.jpg"/>
