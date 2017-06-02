@@ -81,19 +81,35 @@ function calculateWidth() {
 }
 
 function hideLeftArrow() {
-    const position = $(window).scrollLeft();
-    if (position < 100) {
+    const pos = $(window).scrollLeft();
+    if (pos < 100) {
         $("i:nth-child(2)").hide();
     }
 }
 
 function hideRightArrow() {
-    const position = $(window).scrollLeft();
+    const pos = $(window).scrollLeft();
     const w = calculateWidth();
-    if (position > (w - (window.screen.width + 100))) {
+    if (pos > (w - (window.screen.width + 100))) {
         $("i:nth-child(1)").hide();
     }
 }
 
 hideLeftArrow();
 hideRightArrow();
+
+function jump(pos) {
+  $('html,body').animate({
+      scrollLeft: pos},
+      400);
+};
+
+$('.fa-angle-right').click(() => {
+  const pos = $(window).scrollLeft();
+  jump(pos + 500);
+});
+
+$('.fa-angle-left').click(() => {
+  const pos = $(window).scrollLeft();
+  jump(pos - 500);
+});
