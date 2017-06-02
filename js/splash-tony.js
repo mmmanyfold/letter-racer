@@ -166,7 +166,6 @@ function flickerPauses2() {
 }
 
 function onFlickr1() {
-    console.log(lastTime_1);
     if (flickr_1) {
         on1()
     } else {
@@ -176,7 +175,6 @@ function onFlickr1() {
 }
 
 function onFlickr2() {
-    console.log(lastTime_2);
     if (flickr_2) {
         on2()
     } else {
