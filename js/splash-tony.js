@@ -7,7 +7,7 @@ const wrapper = document.querySelector('#cassette-wrap');
 const soundPlayer = document.querySelector('.sound-player')
     .querySelector('iframe');
 
-// sound-player iframe width and height
+// soundcloud iframe responsive width and height
 const w = window.innerHeight * 0.65;
 const h = window.innerHeight * 0.58;
 soundPlayer.width = w;
@@ -61,6 +61,8 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+// scroll arrows
+
 $(window).on("scrollstart", function () {
     $("i").fadeOut(100);
     hideLeftArrow();
@@ -77,7 +79,7 @@ $(window).on("scrollstop", function () {
 function calculateWidth() {
     const ratios = [0.64, 1.52, 1.03, 0.58, 0.73, 1.24, 0.37];
     const windowHeight = window.innerHeight;
-    return ratios.map(r => r * windowHeight).reduce((a,b) => a + b);
+    return ratios.map(r => r * windowHeight).reduce((a, b) => a + b);
 }
 
 function hideLeftArrow() {
@@ -99,17 +101,89 @@ hideLeftArrow();
 hideRightArrow();
 
 function jump(pos) {
-  $('html,body').animate({
-      scrollLeft: pos},
-      400);
+    $('html,body').animate({
+            scrollLeft: pos
+        },
+        400);
 };
 
 $('.fa-angle-right').click(() => {
-  const pos = $(window).scrollLeft();
-  jump(pos + 500);
+    const pos = $(window).scrollLeft();
+    jump(pos + 500);
 });
 
 $('.fa-angle-left').click(() => {
-  const pos = $(window).scrollLeft();
-  jump(pos - 500);
+    const pos = $(window).scrollLeft();
+    jump(pos - 500);
 });
+
+// neon flickers
+
+let flickr_1 = false;
+let flickr_2 = false;
+
+const on1 = () => {
+    flickr_1 = false;
+    $('#neon-1').attr('src', 'img/splash-tony/1-neon-color.jpg')
+}
+
+const off1 = () => {
+    flickr_1 = true;
+    $('#neon-1').attr('src', 'img/splash-tony/1-neon-bw.jpg')
+}
+
+const on2 = () => {
+    flickr_2 = false;
+    $('#neon-2').attr('src', 'img/splash-tony/2-neon-color.jpg')
+}
+
+const off2 = () => {
+    flickr_2 = true;
+    $('#neon-2').attr('src', 'img/splash-tony/2-neon-bw.jpg')
+}
+
+var lastTime_1 = 0;
+var lastTime_2 = 0;
+
+function flickerPauses1() {
+    if (lastTime_1 < 5) {
+        lastTime_1++;
+        return Math.random() * 100;
+    } else {
+        lastTime_1 = 0;
+        return Math.random() * 2300;
+    }
+}
+
+function flickerPauses2() {
+    if (lastTime_2 < 5) {
+        lastTime_2++;
+        return Math.random() * 100;
+    } else {
+        lastTime_2 = 0;
+        return Math.random() * 2300;
+    }
+}
+
+function onFlickr1() {
+    console.log(lastTime_1);
+    if (flickr_1) {
+        on1()
+    } else {
+        off1()
+    }
+    setTimeout(onFlickr1, flickerPauses1());
+}
+
+function onFlickr2() {
+    console.log(lastTime_2);
+    if (flickr_2) {
+        on2()
+    } else {
+        off2()
+    }
+    setTimeout(onFlickr2, flickerPauses2());
+}
+
+onFlickr1();
+onFlickr2();
