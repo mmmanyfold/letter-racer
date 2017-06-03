@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     <!-- twitter metadata -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@letterracer">
@@ -19,84 +19,10 @@
 
     <title>Tony Seltzer</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/features/splash-tony.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.9/chance.min.js"></script>
-    <style>
-      html,body {
-        height: 100%;
-        margin: 0;
-        font-family: 'helvetica', sans-serif;
-      }
-      .wrapper {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-        height: 100%;
-      }
-      .wrapper img {
-        height: 100%;
-        width: auto;
-      }
-
-      /*glow for webkit*/
-      @-webkit-keyframes neon1 {
-        from {
-          text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 16px #fff, 0 0 20px #FF1177, 0 0 36px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 76px #FF1177;
-        }
-        to {
-          text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #FF1177, 0 0 18px #FF1177, 0 0 20px #FF1177, 0 0 25px #FF1177, 0 0 38px #FF1177;
-        }
-      }
-
-      .fa-angle-right, .fa-angle-left {
-        top: 45%;
-        position: fixed;
-        font-size: 4em;
-        opacity: 0.75;
-        z-index: 10;
-        color: #fff;
-        cursor: pointer;
-        -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-        -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-        animation: neon1 1.5s ease-in-out infinite alternate;
-      }
-      .fa-angle-right {
-        right: 20px;
-      }
-      .fa-angle-left {
-        left: 20px;
-      }
-      .sound-player, #cassette-wrap, .tracklist-wrap {
-        position: relative;
-      }
-      .sound-player iframe, #cassette-wrap canvas, .tracklist-wrap .tracklist {
-        position: absolute;
-      }
-      .sound-player iframe {
-        top: 20%;
-        left: 180px;
-      }
-      .tracklist-wrap .tracklist {
-        height: 50%;
-        width: auto;
-        top: 10%;
-        left: 9em;
-        display: inline-block;
-      }
-      .tracklist-wrap .tracklist img {
-        margin-bottom: 0.5em;
-      }
-      h1 {
-        margin: 0;
-        font
-      }
-      mark {
-        background-color: rgba(0,0,0,0.5);
-        padding: 0 0.2em;
-        color: white;
-      }
-    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery.scrollstop.min.js"></script>
@@ -108,7 +34,7 @@
     <i class="fa fa-angle-left" aria-hidden="true"></i>
     <img id="neon-1" src="img/splash-tony/1-neon-color.jpg"/>
     <div class="sound-player">
-      <iframe width="500" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/325068329%3Fsecret_token%3Ds-mLcEi&amp;color=40c7db&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+      <iframe width="500" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/325068329%3Fsecret_token%3Ds-mLcEi&amp;color=40c7db&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
     </div>
     <img id="neon-2" src="img/splash-tony/2-neon-color.jpg"/>
     <div id="cassette-wrap"></div>
