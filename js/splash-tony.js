@@ -28,9 +28,9 @@ function init() {
     camera = new THREE.PerspectiveCamera(290, 1.33, 1, 10000);
     camera.position.z = 1000;
     scene = new THREE.Scene();
-    var geometry = new THREE.BoxGeometry(600, 450, 113, 15, 15, 15);
+    const geometry = new THREE.BoxGeometry(600, 450, 113, 15, 15, 15);
 
-    // var modifier = new THREE.SubdivisionModifier(2);
+    // const modifier = new THREE.SubdivisionModifier(1);
     // geometry.mergeVertices();
     // geometry.computeFaceNormals();
     // geometry.computeVertexNormals();
@@ -57,7 +57,7 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    mesh.rotation.y += 0.0085;
+    mesh.rotation.y += 0.0155;
     renderer.render(scene, camera);
 }
 
@@ -103,8 +103,7 @@ hideRightArrow();
 function jump(pos) {
     $('html,body').animate({
             scrollLeft: pos
-        },
-        400);
+        }, 400);
 };
 
 $('.fa-angle-right').click(() => {
