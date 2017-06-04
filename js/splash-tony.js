@@ -57,7 +57,7 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    mesh.rotation.y += 0.0085;
+    mesh.rotation.y += 0.0155;
     renderer.render(scene, camera);
 }
 
@@ -85,7 +85,7 @@ function calculateWidth() {
 function hideLeftArrow() {
     const pos = $(window).scrollLeft();
     if (pos < 100) {
-        $("i:nth-child(2)").hide();
+        $(".fa-angle-left").hide();
     }
 }
 
@@ -93,7 +93,7 @@ function hideRightArrow() {
     const pos = $(window).scrollLeft();
     const w = calculateWidth();
     if (pos > (w - (window.screen.width + 100))) {
-        $("i:nth-child(1)").hide();
+        $(".fa-angle-right").hide();
     }
 }
 

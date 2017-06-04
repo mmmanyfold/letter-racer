@@ -1,0 +1,75 @@
+html,body {
+  height: 100%;
+  margin: 0;
+  font-family: 'helvetica', sans-serif;
+}
+.wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  height: 100%;
+}
+.wrapper img {
+  height: 100%;
+  width: auto;
+}
+
+/*glow for webkit*/
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 16px #fff, 0 0 20px #FF1177, 0 0 36px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 76px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #FF1177, 0 0 18px #FF1177, 0 0 20px #FF1177, 0 0 25px #FF1177, 0 0 38px #FF1177;
+  }
+}
+
+.fa-angle-right, .fa-angle-left {
+  top: 45%;
+  position: fixed;
+  font-size: 4em;
+  color: #fff;
+  opacity: 0.75;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-animation: neon1 1.15s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.15s ease-in-out infinite alternate;
+  animation: neon1 1.15s ease-in-out infinite alternate;
+}
+.fa-angle-right {
+  right: 20px;
+}
+.fa-angle-left {
+  left: 20px;
+}
+.sound-player, #cassette-wrap, .tracklist-wrap {
+  position: relative;
+}
+.sound-player iframe, #cassette-wrap canvas, .tracklist-wrap .tracklist {
+  position: absolute;
+}
+.sound-player iframe {
+  top: 20%;
+  left: 180px;
+}
+.tracklist-wrap .tracklist {
+  height: 50%;
+  width: auto;
+  top: 10%;
+  left: 9em;
+  display: inline-block;
+}
+.tracklist-wrap .tracklist img {
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+}
+h1 {
+  margin: 0;
+  font
+}
+mark {
+  background-color: rgba(0,0,0,0.5);
+  padding: 0 0.2em;
+  color: white;
+}
