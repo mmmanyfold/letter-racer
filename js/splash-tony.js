@@ -19,7 +19,7 @@ animate();
 function init() {
     var material1 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') });
     var material2 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') });
-    var material3 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side2.jpg') });
+    var material3 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side1.jpg') });
     var material4 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-side1.jpg') });
     var material5 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-front.jpg') });
     var material6 = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./img/splash-tony/cassette-back.jpg') });
@@ -198,5 +198,3 @@ function setBuyWrapperPosition() {
 }
 
 setBuyWrapperPosition();
-
-
