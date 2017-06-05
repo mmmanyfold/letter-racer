@@ -66,10 +66,32 @@ html,body {
 }
 h1 {
   margin: 0;
-  font
 }
 mark {
   background-color: rgba(0,0,0,0.5);
   padding: 0 0.2em;
   color: white;
+}
+.buy-wrap {
+  position: relative;
+}
+.buy {
+  position: absolute;
+  background-image: url('../../img/splash-tony/sunburst.png');
+  background-size: 100%;
+  width: 200px;
+  height:200px;
+  transform: rotate(11deg);
+}
+.buy p {
+  font-size: 1.5em;
+  font-weight: 800;
+  position: absolute;
+  top: 32%;
+  width: 200px;
+  text-align: center;
+}
+
+.buy-wrap a {
+  color: black;
 }
