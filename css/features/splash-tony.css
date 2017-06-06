@@ -3,6 +3,12 @@ html,body {
   margin: 0;
   font-family: 'helvetica', sans-serif;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .wrapper {
   display: -webkit-flex;
   display: flex;
@@ -38,60 +44,99 @@ html,body {
   animation: neon1 1.15s ease-in-out infinite alternate;
 }
 .fa-angle-right {
-  right: 20px;
+  right: 0.3em;
 }
 .fa-angle-left {
-  left: 20px;
+  left: 0.3em;
 }
-.sound-player, #cassette-wrap, .tracklist-wrap {
+.sound-player, #cassette-wrap, .tracklist-wrap, .credits-wrap, .shop-wrap {
   position: relative;
 }
-.sound-player iframe, #cassette-wrap canvas, .tracklist-wrap .tracklist {
+.sound-player iframe, #cassette-wrap canvas, .tracklist-wrap .tracklist, .credits, .shop {
   position: absolute;
 }
 .sound-player iframe {
-  top: 20%;
-  left: 180px;
+  top: 39%;
+  left: 11em;
 }
 .tracklist-wrap .tracklist {
   height: 50%;
-  width: auto;
   top: 10%;
   left: 9em;
   display: inline-block;
 }
 .tracklist-wrap .tracklist img {
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
   border-radius: 1em;
 }
-h1 {
-  margin: 0;
+.tracklist span {
+  margin: 0 0 0 0.4em;
+  background-color: rgba(0,0,0,0.6);
+  padding: 0.15em 0.25em 0 0.25em;
+  font-size: 2.2em;
+  font-weight: 800;
+  line-height: 1.3em;
 }
-mark {
-  background-color: rgba(0,0,0,0.5);
-  padding: 0 0.2em;
-  color: white;
+.tracklist span.bonus {
+  font-size: 1.5em;
+  line-height: 1.3em;
+  margin-left: 0.55em;
+  padding-bottom: 0.35em;
+  font-weight: normal;
+}
+.tracklist a:hover {
+  opacity: 0.8;
 }
 .buy-wrap {
   position: relative;
 }
 .buy {
   position: absolute;
-  background-image: url('../../img/splash-tony/sunburst.png');
+  background-image: url('../../img/splash-tony/sunburst-blue.png');
   background-size: 100%;
-  width: 200px;
-  height:200px;
+  width: 11.9em;
+  height:11.9em;
   transform: rotate(11deg);
+}
+.buy:hover {
+  transform: scale(1.1);
 }
 .buy p {
   font-size: 1.5em;
   font-weight: 800;
   position: absolute;
   top: 32%;
-  width: 200px;
+  width: 7.9em;
   text-align: center;
 }
-
-.buy-wrap a {
-  color: black;
+.shop {
+  right: 3em;
+  top: 3em;
+  text-align: center;
+  font-size: 0.6em;
+  opacity: 0.75;
+}
+.shop img {
+  width: 10em;
+}
+.shop p {
+  margin: 0.5em 0;
+}
+.shop:hover {
+  opacity: 1;
+}
+.credits {
+  width: 100em;
+  text-align: right;
+  right: 0.8em;
+  bottom: 0.8em;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 800;
+  line-height: 1.5em;
+}
+img.nsp {
+  height: 2em;
+  width: auto;
+  margin-right: 0.5em;
 }
