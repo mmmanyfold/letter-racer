@@ -79,6 +79,9 @@ a {
   font-weight: 800;
   line-height: 1.3em;
 }
+.download {
+  cursor: pointer;
+}
 .tracklist span.bonus {
   font-size: 1.5em;
   line-height: 1.3em;
@@ -86,7 +89,7 @@ a {
   padding-bottom: 0.35em;
   font-weight: normal;
 }
-.tracklist a:hover {
+.download:hover {
   opacity: 0.8;
 }
 .buy-wrap {
