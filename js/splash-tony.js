@@ -8,8 +8,8 @@ const soundPlayer = document.querySelector('.sound-player')
     .querySelector('iframe');
 
 // soundcloud iframe responsive width and height
-const w = window.innerHeight * 0.65;
-const h = window.innerHeight * 0.58;
+const w = window.innerHeight * 0.78;
+const h = window.innerHeight * 0.22;
 soundPlayer.width = w;
 soundPlayer.height = h;
 
@@ -47,8 +47,8 @@ function init() {
 }
 
 function onWindowResize() {
-    const w = window.innerHeight * 0.65;
-    const h = window.innerHeight * 0.58;
+    const w = window.innerHeight * 0.78;
+    const h = window.innerHeight * 0.22;
     soundPlayer.width = w;
     soundPlayer.height = h;
     camera.updateProjectionMatrix();
@@ -77,7 +77,7 @@ $(window).on("scrollstop", function () {
 
 
 function calculateWidth() {
-    const ratios = [0.64, 1.52, 1.03, 0.58, 0.73, 1.24, 0.37];
+    const ratios = [0.64, 1.52, 1.03, 0.58, 0.73, 1.24];
     const windowHeight = window.innerHeight;
     return ratios.map(r => r * windowHeight).reduce((a, b) => a + b);
 }
