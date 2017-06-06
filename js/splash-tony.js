@@ -124,22 +124,22 @@ let flickr_2 = false;
 
 const on1 = () => {
     flickr_1 = false;
-    $('#neon-1').attr('src', 'img/splash-tony/1-neon-color.jpg')
+    $('#neon-1-color').css('visibility', 'visible')
 }
 
 const off1 = () => {
     flickr_1 = true;
-    $('#neon-1').attr('src', 'img/splash-tony/1-neon-bw.jpg')
+    $('#neon-1-color').css('visibility', 'hidden')
 }
 
 const on2 = () => {
     flickr_2 = false;
-    $('#neon-2').attr('src', 'img/splash-tony/2-neon-color.jpg')
+    $('#neon-2-color').css('visibility', 'visible')
 }
 
 const off2 = () => {
     flickr_2 = true;
-    $('#neon-2').attr('src', 'img/splash-tony/2-neon-bw.jpg')
+    $('#neon-2-color').css('visibility', 'hidden')
 }
 
 var lastTime_1 = 0;
