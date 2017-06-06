@@ -202,6 +202,3 @@ setBuyWrapperPosition();
 $('.shop').click(function(){
   window.open('http://shop.letterracer.com');
 });
-$('.tracklist span').click(function(){
-  window.open('https://shop.letterracer.com/products/tony-seltzer-remember-the-memories-digital-download-bonus-tracks');
-});

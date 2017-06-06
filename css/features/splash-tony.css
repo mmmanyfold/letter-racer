@@ -79,9 +79,6 @@ a {
   font-weight: 800;
   line-height: 1.3em;
 }
-.download {
-  cursor: pointer;
-}
 .tracklist span.bonus {
   font-size: 1.5em;
   line-height: 1.3em;
@@ -133,7 +130,7 @@ a {
   opacity: 1;
 }
 .credits {
-  width: 100em;
+  width: 40em;
   text-align: right;
   right: 0.8em;
   bottom: 0.8em;
