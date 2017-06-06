@@ -2,6 +2,7 @@ html,body {
   height: 100%;
   margin: 0;
   font-family: 'helvetica', sans-serif;
+  color: white;
 }
 
 a {
@@ -81,7 +82,7 @@ a {
 .tracklist span.bonus {
   font-size: 1.5em;
   line-height: 1.3em;
-  margin-left: 0.57em;
+  margin-left: 0.58em;
   padding-bottom: 0.35em;
   font-weight: normal;
 }
@@ -117,6 +118,7 @@ a {
   text-align: center;
   font-size: 0.6em;
   opacity: 0.75;
+  cursor: pointer;
 }
 .shop img {
   width: 10em;
@@ -133,7 +135,7 @@ a {
   right: 0.8em;
   bottom: 0.8em;
   color: white;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 800;
   line-height: 1.5em;
 }

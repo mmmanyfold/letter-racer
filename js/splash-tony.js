@@ -198,3 +198,7 @@ function setBuyWrapperPosition() {
 }
 
 setBuyWrapperPosition();
+
+$('.shop').click(function(){
+  window.open('http://shop.letterracer.com');
+});
