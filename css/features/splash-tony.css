@@ -49,15 +49,16 @@ a {
 .fa-angle-left {
   left: 0.3em;
 }
-.sound-player, #cassette-wrap, .tracklist-wrap, .credits-wrap, .shop-wrap {
+.sound-player, #cassette-wrap, .tracklist-wrap, .credits-wrap, .shop-wrap, .neon-wrap {
   position: relative;
 }
-.sound-player iframe, #cassette-wrap canvas, .tracklist-wrap .tracklist, .credits, .shop {
+.sound-player iframe, #cassette-wrap canvas, .tracklist-wrap .tracklist, .credits, .shop, .neon-wrap img {
   position: absolute;
 }
 .sound-player iframe {
   top: 39%;
   left: 11em;
+  z-index: 10;
 }
 .tracklist-wrap .tracklist {
   height: 50%;
@@ -80,7 +81,7 @@ a {
 .tracklist span.bonus {
   font-size: 1.5em;
   line-height: 1.3em;
-  margin-left: 0.55em;
+  margin-left: 0.57em;
   padding-bottom: 0.35em;
   font-weight: normal;
 }
@@ -97,6 +98,7 @@ a {
   width: 11.9em;
   height:11.9em;
   transform: rotate(11deg);
+  margin-left: 1em;
 }
 .buy:hover {
   transform: scale(1.1);
@@ -139,4 +141,19 @@ img.nsp {
   height: 2em;
   width: auto;
   margin-right: 0.5em;
+}
+
+@media (min-height: 1000px) {
+  body {
+    font-size: 1.65em;
+  }
+  .buy {
+    margin-left: 2em;
+  }
+  .tracklist span {
+    line-height: 1.31em;
+  }
+  .tracklist span.bonus {
+    line-height: 1.2em;
+  }
 }
